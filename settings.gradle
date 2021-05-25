@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Digidoc_new_copy_to"

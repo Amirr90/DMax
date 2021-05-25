@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="getPatientMedicationMainModel"
+            type="com.criteriontech.digidoctormax.model.GetPatientMedicationMainModel" />
+
+        <variable
+            name="adapterInterface"
+            type="com.criteriontech.digidoctormax.utils.AdapterInterface" />
+    </data>
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/border_rectangle"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{()->adapterInterface.onItemClicked(getPatientMedicationMainModel)}"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="13dp">
+
+        <LinearLayout
+            android:id="@+id/llImage"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/round_circle"
+            android:backgroundTint="#EAF2FD"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/medical_prescription" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_toLeftOf="@+id/imageView8"
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_toRightOf="@id/llImage"
+            android:fontFamily="@font/poppins_semibold"
+            android:singleLine="true"
+            android:text="@{getPatientMedicationMainModel.problemName}"
+            android:textColor="#262E3F"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView21"
+            android:layout_toRightOf="@id/llImage"
+
+            android:text="@{getPatientMedicationMainModel.startDate}"
+            android:textColor="#3F4E6E"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_below="@+id/textView21"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/double_left_arrows_symbol" />
+    </RelativeLayout>
+</layout>

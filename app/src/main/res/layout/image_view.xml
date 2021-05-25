@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="image"
+            type="com.criteriontech.digidoctormax.model.ImageModel" />
+
+        <variable
+            name="clickListener"
+            type="com.criteriontech.digidoctormax.interfaces.OnClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:onClick="@{()->clickListener.onItemClick(image)}">
+
+        <ImageView
+            android:id="@+id/imageView46"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:loadCustomPrescriptionImage="@{image.filePath}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/diagnosis_demo_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

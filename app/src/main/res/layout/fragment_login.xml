@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="generateOTP"
+            type="com.criteriontech.digidoctormax.request.GenerateOTP" />
+
+        <variable
+            name="login"
+            type="com.criteriontech.digidoctormax.request.Login" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.LoginFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_200sdp"
+                android:background="@color/blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TextView
+                    android:id="@+id/textView10"
+                    style="@style/TextLabelDefault"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/login"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_20sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/please_login_to_continue_using_our_app"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clLogin"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_140sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/rectangle_box_rounded_corner"
+                android:backgroundTint="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/tvSignUp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.52">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ClClinicNam"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_33sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="@dimen/_11sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:src="@drawable/ic_doctor"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/etClinicNam"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@null"
+                            android:fontFamily="@font/poppins_regular"
+                            android:hint="@string/mobile_no"
+                            android:inputType="phone"
+                            android:maxLength="10"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text="@={login.mobileNo}"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/text_color"
+                            android:textSize="@dimen/_11sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/imageView3"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ClPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_33sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        app:layout_constraintEnd_toEndOf="@+id/ClClinicNam"
+                        app:layout_constraintStart_toStartOf="@+id/ClClinicNam"
+                        app:layout_constraintTop_toBottomOf="@+id/ClClinicNam">
+
+                        <ImageView
+                            android:id="@+id/ivPassword"
+                            android:layout_width="@dimen/_11sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_marginStart="@dimen/_15sdp"
+                            android:src="@drawable/ic_password"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:background="@null"
+                            android:fontFamily="@font/poppins_regular"
+                            android:hint="@string/password"
+                            android:inputType="textPassword"
+                            android:maxLength="15"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:text="@={login.password}"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/text_color"
+                            android:textSize="@dimen/_11sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/ivPassword"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/tvLogin"
+                        style="@style/TextLabelDefault"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_33sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/rounded_colorfill_button"
+                        android:backgroundTint="@color/yellow"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="@string/login"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/ClPassword"
+                        app:layout_constraintStart_toStartOf="@+id/ClPassword"
+                        app:layout_constraintTop_toBottomOf="@+id/ClPassword" />
+
+                    <TextView
+                        android:id="@+id/tvForgotPass"
+                        style="@style/TextLabelDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Forgot password?"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLogin"
+                        app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--<View
+                    android:id="@+id/view"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@color/grey_light"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvOr"
+                    app:layout_constraintEnd_toStartOf="@+id/tvOr"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tvOr" />
+
+                <TextView
+                    android:id="@+id/tvOr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="or"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_20sdp"
+                    app:layout_constraintEnd_toStartOf="@+id/v1"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/view"
+                    app:layout_constraintTop_toBottomOf="@+id/tvForgotPass" />
+
+                <View
+                    android:id="@+id/v1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@color/grey_light"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvOr"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/tvOr"
+                    app:layout_constraintTop_toTopOf="@+id/tvOr" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Login with mobile numer"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvOr" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ClMobile"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/rounded_colorfill_button_with_outline"
+                    app:layout_constraintEnd_toEndOf="@+id/ClClinicNam"
+                    app:layout_constraintStart_toStartOf="@+id/ClClinicNam"
+                    app:layout_constraintTop_toBottomOf="@+id/textView20">
+
+                    <ImageView
+                        android:id="@+id/ivPhone"
+                        android:layout_width="@dimen/_11sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:src="@drawable/ic_smartphone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/etMobile"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@null"
+                        android:text="@={generateOTP.mobileNo}"
+                        android:fontFamily="@font/poppins_regular"
+                        android:hint="@string/mobile_no"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/text_color"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/ivPhone"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/tvGetOtp"
+                    style="@style/TextLabelDefault"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_33sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/rounded_colorfill_button"
+                    android:backgroundTint="@color/yellow"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:text="Get OTP"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/ClMobile"
+                    app:layout_constraintTop_toBottomOf="@+id/ClMobile" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="New User? Sign Up"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

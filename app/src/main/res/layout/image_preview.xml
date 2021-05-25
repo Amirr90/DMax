@@ -1,0 +1,26 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="uri"
+            type="String" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_preview_image"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:loadCustomImage="@{uri}"
+            android:src="@drawable/ic_launcher_foreground" />
+
+
+    </RelativeLayout>
+</layout>

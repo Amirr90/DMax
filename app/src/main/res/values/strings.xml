@@ -1,0 +1,162 @@
+<resources>
+    <string name="app_name">DigiDoctor Max</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="manage_your_appointments_and_create_new_ones">Manage your appointments and</string>
+    <string name="join_as_a">Login as a</string>
+    <string name="clinic">Clinic</string>
+    <string name="choose">Choose</string>
+    <string name="doctor">Doctor</string>
+    <string name="welcome">Welcome!</string>
+    <string name="create_new_ones">create new ones</string>
+    <string name="clinic_name">Clinic Name</string>
+    <string name="mobile_no">Mobile No.</string>
+    <string name="email_id">Email ID</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="get_started">Get Started</string>
+    <string name="create_profile">Create Profile</string>
+    <string name="create_your_profile_to_join_digimax">Create your profile to join DigiDoctor Max!</string>
+    <string name="update_your_profile_to_join_digimax">Update your profile on DigiDoctor Max!</string>
+    <string name="clinic_hospitl_address">Clinic/ Hospitl Address</string>
+    <string name="resgisration_no">Resgisration No.</string>
+    <string name="work_description">Work Description</string>
+    <string name="manage_doctors">Manage Doctors</string>
+    <string name="next">Next</string>
+    <string name="login">Login</string>
+    <string name="please_login_to_continue_using_our_app">Please login to continue using our app.</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="account">Account</string>
+    <string name="reviews">Reviews</string>
+    <string name="logout">Logout</string>
+    <string name="_23_11_2020">23-11-2020</string>
+    <string name="tue">Tue</string>
+    <string name="Blood_Pressure_Chart">Blood Pressure Chart</string>
+    <string name="Random_Blood_Sugar">Random Blood Sugar</string>
+    <string name="SpO2">SpO2</string>
+    <string name="Respiratory_Rate">Respiratory Rate</string>
+    <string name="Temperature">Temperature</string>
+
+    <string name="Pulse_Rate">Pulse Rate</string>
+    <string name="otp">OTP</string>
+    <string name="specialities">Specialty</string>
+    <string name="years_of_experience">Years of Experience</string>
+    <string name="your_degree">Your Degree</string>
+    <string name="your_fee">Your Fee</string>
+    <string name="allow_patient_to_pay_on_visit">Allow patient to pay on visit.</string>
+    <string name="add_your_time_slot">Add Your Time Slot</string>
+    <string name="doctor_s_name">Doctor Name</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="exit_text">Press again to exit</string>
+    <string name="no_of_doctors">No. of Doctors</string>
+    <string name="total_collected_fees">Total Collected Fees</string>
+    <string name="total_patients_visited">Total Patients Visited</string>
+    <string name="hello">Hello,</string>
+    <string name="date">Date : </string>
+
+    <string name="doctor_detail">In India, there are many Universities &amp; Institutions which offers Anesthesia Courses by providing an opportunity to the students to take up the profession of an Anesthetist &amp; Anesthesiologist. Anesthesia Courses by providing an opportunity to the students to take+</string>
+    <string name="doctors_list">Doctors List</string>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+    <string name="yearly">Yearly</string>
+    <string name="description">Description</string>
+    <string name="create_slot">Create Slot</string>
+    <string name="no_of_patients">No. of Patients</string>
+    <string name="prescribed_patients">Prescribed Patients</string>
+    <string name="pending_patients">Pending Patients</string>
+    <string name="today_s_appointments">Today\'s Appointments</string>
+    <string name="patient_list">Patient List</string>
+    <string name="confirm">Confirm</string>
+    <string name="created_slot">Created Slot</string>
+    <string name="time_to">Time To</string>
+    <string name="time_from">Time From</string>
+    <string name="days">Days</string>
+    <string name="add">Add</string>
+    <string name="monthly_medical_checkup">Monthly Medical Checkup</string>
+    <string name="other_advice">Other Advice</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="diagnosis_provisional_diagnosis">Diagnosis/Provisional Diagnosis</string>
+    <string name="diagnostic_details">Diagnostic Details</string>
+    <string name="suggest_investigations_medical_checkups">Suggest Investigations (Medical checkups)</string>
+    <string name="search_investigation">Search Investigation</string>
+    <string name="symptoms_uploaded_by_patient">Symptoms uploaded by patient.</string>
+    <string name="add_patient_vitals_details">Add patient vitals details.</string>
+    <string name="medicine">Medicine</string>
+    <string name="frequency">Frequency</string>
+    <string name="duration_in_days">Duration (in days)</string>
+    <string name="given_advice">Given Advice</string>
+    <string name="advice">Advice</string>
+    <string name="avoid_diet">Avoid Diet</string>
+    <string name="other_diet">Other Diet</string>
+    <string name="recommended_diet">Recommended Diet</string>
+    <string name="duration">Duration</string>
+    <string name="add_doctor">Add Doctor</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="you_have_added_your_doctor">You have added your doctor successfully.</string>
+    <string name="do_you_want_to_add_more_doctors">Do you want to add more doctors.</string>
+    <string name="do_oyu_want_to_add_doctor">Do you want to add doctors.</string>
+    <string name="paid">Paid</string>
+    <string name="search_investigation_here">Search Investigation Here</string>
+    <string name="close">Close</string>
+
+
+    <string name="blood_pressure">Blood Pressure</string>
+    <string name="random_blood_sugar">Random Blood Sugar</string>
+    <string name="other_vital">Other Vital</string>
+    <string name="spo2">SpO2</string>
+    <string name="temperature">Temperature</string>
+    <string name="pulse_rate">Pulse Rate</string>
+    <string name="respiratory_rate">Respiratory rate</string>
+    <string name="history">History</string>
+    <string name="_90_60mmhg_lower">_90_60mmhg_lower</string>
+    <string name="_140_90mmhg_higher">_140_90mmhg_higher</string>
+    <string name="systolic">Systolic</string>
+    <string name="diastolic">Diastolic</string>
+    <string name="update_password">Update Password</string>
+    <string name="your_new_password_must_be_different_from_previously_used_password">Your new password must be different from previously used password.</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="change_password">Change Password</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="number">Number</string>
+    <string name="dob">Date of birth</string>
+    <string name="avg_patient_consultation_time">Avg. Patient consultation Time</string>
+    <string name="duration_in_minutes">Duration (in Min)</string>
+    <string name="digidoctor_video_call">DigiDoctor Video Call</string>
+    <string name="incoming">Incoming</string>
+    <string name="permissions_needed">Permission Needed</string>
+    <string name="connection_failure">Connection Failure</string>
+    <string name="call_didnt_connect">Call didn\'t connect</string>
+    <string name="call_has_been_disconnected">Call has been disconnected</string>
+    <string name="room_screen_select_device">Select room device</string>
+    <string name="add_new_doctor">Add New Doctor</string>
+    <string name="select_slot">Select Slot</string>
+    <string name="past_medical_history">Past Medical History</string>
+    <string name="done">Done</string>
+    <string name="comming_soon">Coming Soon</string>
+    <string name="share_app">Share App</string>
+    <string name="home_quarantine_req">Home Quarantine Request</string>
+    <string name="remark_here">Remark here</string>
+
+
+    <string-array name="Bank_Name">
+        <item>Select Bank</item>
+        <item>Aditya Birla Idea Payments Bank Ltd</item>
+        <item>Airtel Payments Bank Ltd</item>
+        <item>Andhra Pradesh GVB</item>
+
+        <item>
+        </item>
+
+    </string-array>
+</resources>

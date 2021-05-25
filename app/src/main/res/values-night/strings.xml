@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_quarantine_req">Home Quarantine Request</string>
+    <string name="remark_here">Remark here</string>
+</resources>

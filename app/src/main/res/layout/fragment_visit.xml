@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="adviseDetails"
+            type="com.criteriontech.digidoctormax.model.GetPatientMedicationAdviceModel" />
+
+        <variable
+            name="medication"
+            type="com.criteriontech.digidoctormax.model.GetPatientMedicationMainModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".VisitFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="24dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/border_rectangle"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingBottom="23dp">
+
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:layout_toEndOf="@id/llImage"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@{medication.drName}"
+                    android:textColor="#262E3F"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView26"
+                    android:layout_toEndOf="@id/llImage"
+                    android:text="@{medication.specialty}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <LinearLayout
+                    android:id="@+id/llImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/round_circle"
+                    android:backgroundTint="#EAF2FD"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_centerHorizontal="true"
+                        android:loadCustomImage="@{medication.profilePhotoPath}"
+                        android:src="@drawable/ic_doctor"
+                        app:civ_border_color="@color/colorPrimary" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/llImage"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_marginRight="13dp"
+                    android:background="#EEEEEE" />
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="19dp"
+                    android:layout_height="18dp"
+                    android:layout_below="@id/view1"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="13dp"
+                    android:setCustomVisibility="@{medication.testName}"
+                    android:src="@drawable/check_up_icon"
+                    android:tint="@color/GreyColo" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view1"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_toEndOf="@+id/imageView9"
+                    android:setCustomVisibility="@{medication.testName}"
+                    android:text="@{medication.testName}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="19dp"
+                    android:layout_height="18dp"
+                    android:layout_below="@id/imageView9"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="22dp"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView9"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_toEndOf="@+id/imageView10"
+                    android:text="@{medication.startDate}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:setCustomVisibility="@{medication.problemName}"
+                android:text="@string/diagnosis"
+                android:textColor="#262E3F"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:autoSizeTextType="uniform" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="15dp"
+                android:setCustomVisibility="@{medication.problemName}"
+                android:text="@{medication.problemName}"
+                android:textColor="#3F4E6E"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:autoSizeTextType="uniform" />
+
+            <RelativeLayout
+                android:id="@+id/rlViewFile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="21dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/border_rectangle"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingBottom="23dp"
+                android:setCustomVisibility="@{medication.filePath}"
+                android:visibility="visible">
+
+
+                <TextView
+                    android:id="@+id/tcPhysicalExamination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:layout_toEndOf="@id/llImage2"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@{medication.testName}"
+                    android:textColor="#262E3F"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSpec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tcPhysicalExamination"
+                    android:layout_marginTop="1dp"
+                    android:layout_toEndOf="@id/llImage2"
+                    android:text="@{medication.startDate}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="14sp"
+                    android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/tvViewImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvSpec"
+                    android:layout_marginTop="17dp"
+                    android:layout_toEndOf="@id/llImage2"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:drawablePadding="10dp"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:paddingEnd="20dp"
+                    android:text="see Prescription"
+                    android:textColor="#0A586C"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:drawableRightCompat="@drawable/ic_baseline_arrow_right_alt_24" />
+
+
+                <LinearLayout
+                    android:id="@+id/llImage2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/round_circle"
+                    android:backgroundTint="#EAF2FD"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/lab_icon"
+                        app:civ_border_color="@color/colorPrimary" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:setCustomVisibility="@{adviseDetails.recommendedDiet}"
+                android:text="Recomendation"
+                android:textColor="#262E3F"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:autoSizeTextType="uniform" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="15dp"
+                android:setCustomVisibility="@{adviseDetails.recommendedDiet}"
+                android:text="@{adviseDetails.recommendedDiet}"
+                android:textColor="#3F4E6E"
+                android:textSize="12sp"
+                android:textStyle="normal"
+                app:autoSizeTextType="uniform" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="38dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:setCustomVisibility="@{medication.medicineDetails.size()==0?false:true}"
+                android:text="prescription"
+                android:textColor="#262E3F"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:autoSizeTextType="uniform" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/medicationRec"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="false"
+                android:setCustomVisibility="@{medication.medicineDetails.size()==0?false:true}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="2"
+                tools:listitem="@layout/visit_view" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

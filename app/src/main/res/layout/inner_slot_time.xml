@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="timeSlot"
+            type="com.criteriontech.digidoctormax.model.TimeSlotDataTable" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:paddingTop="10dp"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/textView76"
+            android:layout_width="85dp"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal"
+            android:text="@{timeSlot.dayName}"
+            android:textColor="#23384D"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView60"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView60"
+            android:layout_width="84dp"
+            android:layout_height="19dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center_horizontal"
+            android:text="@{timeSlot.timeFrom,default=time}"
+            android:textColor="#23384D"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView76"
+            app:layout_constraintEnd_toStartOf="@+id/textView65"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView76"
+            app:layout_constraintTop_toTopOf="@+id/textView76" />
+
+        <TextView
+            android:id="@+id/textView65"
+            android:layout_width="84dp"
+            android:layout_height="19dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center_horizontal"
+            android:text="@{timeSlot.timeTo ,default=time}"
+            android:textColor="#23384D"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView60"
+            app:layout_constraintEnd_toStartOf="@+id/imgDel"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView60"
+            app:layout_constraintTop_toTopOf="@+id/textView60" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView27"-->
+<!--            android:layout_width="15dp"-->
+<!--            android:layout_height="15dp"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/textView65"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/imgDel"-->
+<!--            app:layout_constraintHorizontal_bias="0.5"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/textView65"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/textView65"-->
+<!--            app:srcCompat="@drawable/edit" />-->
+
+        <ImageView
+            android:id="@+id/imgDel"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView65"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintTop_toTopOf="@+id/textView65"
+            app:srcCompat="@drawable/trash" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+

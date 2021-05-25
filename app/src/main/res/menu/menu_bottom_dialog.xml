@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/investigation"
+        android:title="Investigation" />
+    <item
+        android:id="@+id/prescription"
+        android:title="Prescriptions" />
+    <item
+        android:id="@+id/vital"
+        android:title="Vitals" />
+</menu>

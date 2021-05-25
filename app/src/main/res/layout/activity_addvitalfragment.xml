@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="addVital"
+            type="com.criteriontech.digidoctormax.request.VitalModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        tools:context=".fragment.Addvitalfragment">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:padding="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.9">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/c3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="171dp"
+                android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp">
+
+
+                <TextView
+                    android:id="@+id/textView74"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/Blood_Pressure_Chart"
+                    android:textColor="#23384D"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView29"
+                    app:layout_constraintStart_toEndOf="@+id/imageView29"
+                    app:layout_constraintTop_toTopOf="@+id/imageView29" />
+
+                <TextView
+                    android:id="@+id/textView63"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/Pulse_Rate"
+                    android:textColor="#23384D"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView31"
+                    app:layout_constraintStart_toEndOf="@+id/imageView31"
+                    app:layout_constraintTop_toTopOf="@+id/imageView31" />
+
+                <TextView
+                    android:id="@+id/textView66"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/Random_Blood_Sugar"
+                    android:textColor="#23384D"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView33"
+                    app:layout_constraintStart_toEndOf="@+id/imageView33"
+                    app:layout_constraintTop_toTopOf="@+id/imageView33" />
+
+                <TextView
+                    android:id="@+id/textView68"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/SpO2"
+                    android:textColor="#23384D"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView35"
+                    app:layout_constraintStart_toEndOf="@+id/imageView35"
+                    app:layout_constraintTop_toTopOf="@+id/imageView35" />
+
+                <TextView
+                    android:id="@+id/textView70"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/Respiratory_Rate"
+                    android:textColor="#23384D"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView38"
+                    app:layout_constraintStart_toEndOf="@+id/imageView38"
+                    app:layout_constraintTop_toTopOf="@+id/imageView38" />
+
+                <TextView
+                    android:id="@+id/textView72"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/Temperature"
+                    android:textColor="#23384D"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView40"
+                    app:layout_constraintStart_toEndOf="@+id/imageView40"
+                    app:layout_constraintTop_toTopOf="@+id/imageView40" />
+
+                <EditText
+                    android:id="@+id/textView62"
+                    android:layout_width="0dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical"
+                    android:hint="@string/systolic"
+                    android:inputType="numberDecimal"
+                    android:maxLength="3"
+                    android:paddingStart="11dp"
+                    android:text="@={addVital.systolic}"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintBottom_toTopOf="@+id/imageView31"
+                    app:layout_constraintEnd_toStartOf="@+id/textView61"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView29"
+                    tools:ignore="RtlCompat" />
+
+                <EditText
+                    android:id="@+id/textView64"
+                    android:layout_width="0dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical"
+                    android:hint="Pulse Rate Value"
+                    android:inputType="numberDecimal"
+                    android:maxLength="3"
+                    android:paddingLeft="11dp"
+                    android:text="@={addVital.pulse}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imageView31"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView31" />
+
+                <EditText
+                    android:id="@+id/textView67"
+                    android:layout_width="0dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical"
+                    android:hint="Blood Sugar Value"
+                    android:inputType="numberDecimal"
+                    android:maxLength="3"
+                    android:paddingLeft="11dp"
+                    android:text="@={addVital.rbs}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imageView33"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView33" />
+
+                <EditText
+                    android:id="@+id/textView69"
+                    android:layout_width="0dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical"
+                    android:hint="SpO2 Value"
+                    android:inputType="numberDecimal"
+                    android:maxLength="3"
+                    android:paddingLeft="11dp"
+                    android:text="@={addVital.spo2}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imageView35"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView35" />
+
+                <EditText
+                    android:id="@+id/textView71"
+                    android:layout_width="0dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical"
+                    android:hint="@string/Respiratory_Rate"
+                    android:inputType="numberDecimal"
+                    android:maxLength="3"
+                    android:paddingLeft="11dp"
+                    android:text="@={addVital.rr}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imageView38"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView38" />
+
+                <EditText
+                    android:id="@+id/textView73"
+                    android:layout_width="0dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical"
+                    android:hint="@string/Temperature"
+                    android:inputType="numberDecimal"
+                    android:maxLength="6"
+                    android:paddingLeft="11dp"
+                    android:text="@={addVital.temp}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/imageView40"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView40" />
+
+                <EditText
+                    android:id="@+id/textView61"
+                    android:layout_width="0dp"
+                    android:layout_height="34dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center_vertical"
+                    android:hint="Diastolic"
+                    android:inputType="numberDecimal"
+                    android:maxLength="3"
+                    android:paddingLeft="11dp"
+                    android:text="@={addVital.diastolic}"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView62"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView62"
+                    app:layout_constraintTop_toTopOf="@+id/textView62" />
+
+
+                <Button
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="22dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/slot_week"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="Submit"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView73" />
+
+                <ImageView
+                    android:id="@+id/imageView29"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/eellipse" />
+
+                <ImageView
+                    android:id="@+id/imageView30"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView29"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView29"
+                    app:layout_constraintStart_toStartOf="@+id/imageView29"
+                    app:layout_constraintTop_toTopOf="@+id/imageView29"
+                    app:srcCompat="@drawable/bpchart" />
+
+                <ImageView
+                    android:id="@+id/imageView31"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="@+id/imageView29"
+                    app:layout_constraintTop_toBottomOf="@+id/textView62"
+                    app:srcCompat="@drawable/eellipse" />
+
+                <ImageView
+                    android:id="@+id/imageView33"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="@+id/imageView31"
+                    app:layout_constraintTop_toBottomOf="@+id/textView64"
+                    app:srcCompat="@drawable/eellipse" />
+
+                <ImageView
+                    android:id="@+id/imageView35"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="29dp"
+                    app:layout_constraintStart_toStartOf="@+id/imageView33"
+                    app:layout_constraintTop_toBottomOf="@+id/textView67"
+                    app:srcCompat="@drawable/eellipse" />
+
+                <ImageView
+                    android:id="@+id/imageView38"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/imageView35"
+                    app:layout_constraintTop_toBottomOf="@+id/textView69"
+                    app:srcCompat="@drawable/eellipse" />
+
+                <ImageView
+                    android:id="@+id/imageView40"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@+id/imageView38"
+                    app:layout_constraintTop_toBottomOf="@+id/textView71"
+                    app:srcCompat="@drawable/eellipse" />
+
+                <ImageView
+                    android:id="@+id/imageView32"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="8dp"
+                    android:foregroundGravity="center"
+                    android:textAlignment="center"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView31"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView31"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/imageView31"
+                    app:layout_constraintTop_toTopOf="@+id/imageView31"
+                    app:layout_constraintVertical_bias="0.47"
+                    app:srcCompat="@drawable/heart" />
+
+                <ImageView
+                    android:id="@+id/imageView34"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView33"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView33"
+                    app:layout_constraintStart_toStartOf="@+id/imageView33"
+                    app:layout_constraintTop_toTopOf="@+id/imageView33"
+                    app:srcCompat="@drawable/blood" />
+
+                <ImageView
+                    android:id="@+id/imageView36"
+                    android:layout_width="2dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView33"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView33"
+                    app:layout_constraintStart_toStartOf="@+id/imageView33"
+                    app:layout_constraintTop_toTopOf="@+id/imageView33"
+                    app:srcCompat="@drawable/blood" />
+
+                <ImageView
+                    android:id="@+id/imageView37"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView35"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView35"
+                    app:layout_constraintStart_toStartOf="@+id/imageView35"
+                    app:layout_constraintTop_toTopOf="@+id/imageView35"
+                    app:srcCompat="@drawable/group" />
+
+                <ImageView
+                    android:id="@+id/imageView39"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView38"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView38"
+                    app:layout_constraintStart_toStartOf="@+id/imageView38"
+                    app:layout_constraintTop_toTopOf="@+id/imageView38"
+                    app:srcCompat="@drawable/lungs" />
+
+                <ImageView
+                    android:id="@+id/imageView41"
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView40"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView40"
+                    app:layout_constraintStart_toStartOf="@+id/imageView40"
+                    app:layout_constraintTop_toTopOf="@+id/imageView40"
+                    app:srcCompat="@drawable/thermometer" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

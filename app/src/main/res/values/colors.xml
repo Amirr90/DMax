@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1089FE</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#1089FE</color>
+    <color name="yellow">#EDA537</color>
+    <color name="black">#080C10</color>
+    <color name="background_color">#EDF6FF</color>
+    <color name="text_color">#23384D</color>
+    <color name="dark_grey">#3F4E6E</color>
+    <color name="dark_grey_heading">#262E3F</color>
+    <color name="grey">#A1A1A1</color>
+    <color name="grey_subtext">#414141</color>
+    <color name="grey_light">#EEEEEE</color>
+    <color name="pink">#FF7EA5</color>
+    <color name="green">#FF7EA5</color>
+    <color name="add">#EDA537</color>
+    <color name="green_outline">#4DCB66</color>
+    <color name="grey_selected">#F1F1F1</color>
+
+    <color name="green700">#66BB6A</color>
+    <color name="yellow700">#EDA537</color>
+
+
+
+
+
+    <color name="BackgroundColor">#f2f6fe</color>
+    <color name="GreyColo">#a2b3b8</color>
+    <color name="YellowColo">#EDA537</color>
+    <color name="TextGrayColo">#B33F4E6E</color>
+
+    <color name="textColorBlack">#262E3F</color>
+    <color name="greyLight">#F1F4F9</color>
+    <color name="textColor">#3F4E6E</color>
+    <color name="red">#F44336</color>
+
+
+
+</resources>

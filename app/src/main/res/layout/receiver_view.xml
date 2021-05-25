@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.graphics.Color" />
+
+        <variable
+            name="chatInterface"
+            type="com.criteriontech.digidoctormax.interfaces.ChatInterface" />
+
+        <variable
+            name="chats"
+            type="com.criteriontech.digidoctormax.model.ChatModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginRight="3dp"
+        android:paddingTop="@dimen/dimen_5dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:id="@+id/textView149"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/receiver_background_text_view"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="10dp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="10dp"
+            android:text="@{chats.message}"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTimeStamp" />
+
+        <TextView
+            android:id="@+id/textView150"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="@{chats.seen?`seen`:`sent`}"
+            android:textColor="@{chats.seen?Color.parseColor(`#03A9F4`):Color.parseColor(`#802D2D2D`)}"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/textView149"
+            app:layout_constraintTop_toBottomOf="@+id/textView149" />
+
+        <TextView
+            android:id="@+id/tvTimeStamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:text="07:12:54"
+            android:textColor="#802D2D2D"
+            android:textSize="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

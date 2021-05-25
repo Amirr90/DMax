@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="isolation"
+            type="com.criteriontech.digidoctormax.model.HomeIsolationReqModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomeIsolationDetailFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rlViewFile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border_rectangle"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/_20sdp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+
+                <TextView
+                    android:id="@+id/tcPhysicalExamination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_toEndOf="@id/llImage2"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="@{isolation.hospitalName,default=`Era Medical College`}"
+                    android:textColor="#262E3F"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/tvStatus"
+                    app:layout_constraintStart_toEndOf="@+id/llImage2"
+                    app:layout_constraintTop_toTopOf="@+id/llImage2" />
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tcPhysicalExamination"
+                    android:layout_toEndOf="@id/llImage2"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@{isolation.homeIsolationStatus,default=`Pending`}"
+                    android:textAllCaps="true"
+                    android:textColor="#3F4E6E"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="@+id/llImage2"
+                    app:layout_constraintStart_toStartOf="@+id/tcPhysicalExamination"
+                    app:layout_constraintTop_toBottomOf="@+id/tcPhysicalExamination" />
+
+                <LinearLayout
+                    android:id="@+id/llImage2"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/round_circle"
+                    android:backgroundTint="#EAF2FD"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.airbnb.lottie.LottieAnimationView
+
+                        android:id="@+id/btLoading"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center_vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border_rectangle"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/rlViewFile"
+                app:layout_constraintStart_toStartOf="@+id/rlViewFile"
+                app:layout_constraintTop_toBottomOf="@+id/rlViewFile">
+
+                <!--   Name Time-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Name"
+                    android:textColor="#262E3F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@{isolation.name}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    app:autoSizeTextType="uniform" />
+                <!--   Number Here-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Mobile Number"
+                    android:textColor="#262E3F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@{isolation.userMobileNo}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    app:autoSizeTextType="uniform" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/border_rectangle"
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                app:layout_constraintEnd_toEndOf="@+id/rlViewFile"
+                app:layout_constraintStart_toStartOf="@+id/rlViewFile"
+                app:layout_constraintTop_toBottomOf="@+id/rlViewFile">
+
+                <!--   Request Time-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Symptoms"
+                    android:textColor="#262E3F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@{isolation.stymptoms,default=`NA`}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    app:autoSizeTextType="uniform" />
+
+
+                <!--   OnSetDate-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="OnSet Date"
+                    android:textColor="#262E3F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@{isolation.onSetDate,default=`NA`}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    app:autoSizeTextType="uniform" />
+
+                <!--   Comorbidies Here-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Comorbidies"
+                    android:textColor="#262E3F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@{isolation.comoribid,default=`NA`}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    app:autoSizeTextType="uniform" />
+
+
+                <!--   Package Name here-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Package"
+                    android:textColor="#262E3F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@{isolation.packageName}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:id="@+id/tvPackagePriceD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_regular"
+
+                    android:textColor="#3F4E6E"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    app:autoSizeTextType="uniform" />
+
+
+                <!--   Corona Test Date-->
+                <TextView
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:setCustomVisibility="@{isolation.testDate}"
+                    android:text="Corona Test Date"
+                    android:textColor="#262E3F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:setCustomVisibility="@{isolation.testDate}"
+                    android:text="@{isolation.testDate,default=`NA`}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    app:autoSizeTextType="uniform" />
+
+
+                <!--   Allergy-->
+                <TextView
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:setCustomVisibility="@{isolation.allergires}"
+                    android:text="Allergy"
+                    android:textColor="#262E3F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:setCustomVisibility="@{isolation.allergires}"
+                    android:text="@{isolation.allergires,default=`NA`}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    app:autoSizeTextType="uniform" />
+
+                <!--  life Support value here-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:setCustomVisibility="@{isolation.o2}"
+                    android:text="Life Support"
+                    android:textColor="#262E3F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:setCustomVisibility="@{isolation.o2}"
+                    android:text="@{isolation.lifeSupportValue,default=`NA`}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    app:autoSizeTextType="uniform" />
+
+                <!--   O2 value here-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:setCustomVisibility="@{isolation.o2}"
+                    android:text="O2 Value"
+                    android:textColor="#262E3F"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:setCustomVisibility="@{isolation.o2}"
+                    android:text="@{isolation.o2,default=`NA`}"
+                    android:textColor="#3F4E6E"
+                    android:textSize="12sp"
+                    android:textStyle="normal"
+                    app:autoSizeTextType="uniform" />
+
+
+                <!-- Allergy
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="38dp"
+                     android:layout_marginTop="15dp"
+                     android:layout_marginEnd="15dp"
+                     android:fontFamily="@font/poppins_semibold"
+                     android:text="Allergy"
+                     android:textColor="#262E3F"
+                     android:textSize="15sp"
+                     android:textStyle="bold"
+                     app:autoSizeTextType="uniform" />
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="38dp"
+                     android:layout_marginEnd="15dp"
+                     android:fontFamily="@font/poppins"
+                     android:text="@{isolation.allergires}"
+                     android:textColor="#3F4E6E"
+                     android:textSize="12sp"
+                     android:textStyle="normal"
+                     app:autoSizeTextType="uniform" />-->
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recVital"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/border_rectangle"
+                android:nestedScrollingEnabled="false"
+                android:paddingBottom="@dimen/_10sdp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="8"
+                tools:listitem="@layout/vitals_view" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/btnApproved"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/YellowColo"
+                    android:text="Approved" />
+
+                <Button
+                    android:id="@+id/btnReject"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/red"
+                    android:text="Reject" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

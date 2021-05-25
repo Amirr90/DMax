@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dr_dashboard_navigation"
+    app:startDestination="@id/drHome">
+
+    <fragment
+        android:id="@+id/drHome"
+        android:name="com.criteriontech.digidoctormax.fragment.home.DrHome"
+        android:label="DrHome"
+        tools:layout="@layout/fragment_dr_home">
+        <action
+            android:id="@+id/action_drHome_to_patientListActivity"
+            app:destination="@id/patientListActivity"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_drHome_to_chooseLoginType2"
+            app:destination="@id/chooseLoginType2"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_drHome_to_drCreateProfile3"
+            app:destination="@id/drCreateProfile3"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_drHome_to_startActivity"
+            app:destination="@id/startActivity"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_drHome_to_changePassword"
+            app:destination="@id/changePassword"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_drHome_to_splashScreen"
+            app:destination="@id/splashScreen" />
+        <action
+            android:id="@+id/action_drHome_to_add_Bank_Details_Fragment"
+            app:destination="@id/add_Bank_Details_Fragment" />
+        <action
+            android:id="@+id/action_drHome_to_quarantinePatientListFragment"
+            app:destination="@id/quarantinePatientListFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/patientListActivity"
+        android:name="com.criteriontech.digidoctormax.activity.PatientListActivity"
+        android:label="@string/patient_list"
+        tools:layout="@layout/activity_patient_list">
+        <action
+            android:id="@+id/action_patientListActivity_to_writePrescriptionFragment"
+            app:destination="@id/writePrescriptionFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_patientListActivity_to_patientDetailsActivity"
+            app:destination="@id/patientDetailsActivity"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_patientListActivity_to_rescheduleFragment"
+            app:destination="@id/rescheduleFragment" />
+        <action
+            android:id="@+id/action_patientListActivity_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/patientDetailsActivity"
+        android:name="com.criteriontech.digidoctormax.activity.PatientDetailsActivity"
+        android:label="Patient Details"
+        tools:layout="@layout/activity_patient_details">
+        <action
+            android:id="@+id/action_patientDetailsActivity_to_investigationsFragment"
+            app:destination="@id/investigationsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_patientDetailsActivity_to_prescriptionsFragment"
+            app:destination="@id/prescriptionsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_patientDetailsActivity_to_vitalsFragment"
+            app:destination="@id/vitalsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/writePrescriptionFragment"
+        android:name="com.criteriontech.digidoctormax.fragment.WritePrescriptionFragment"
+        android:label="Write Prescription"
+        tools:layout="@layout/fragment_write_prescription">
+        <action
+            android:id="@+id/action_writePrescriptionFragment_to_patientDetailsActivity"
+            app:destination="@id/patientDetailsActivity"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_writePrescriptionFragment_to_addvitalfragment"
+            app:destination="@id/addvitalfragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_writePrescriptionFragment_to_vitalsFragment"
+            app:destination="@id/vitalsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_writePrescriptionFragment_to_prescriptionsFragment"
+            app:destination="@id/prescriptionsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_writePrescriptionFragment_to_investigationsFragment"
+            app:destination="@id/investigationsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseLoginType2"
+        android:name="com.criteriontech.digidoctormax.activity.ChooseLoginType"
+        android:label="activity_choose_login_type"
+        tools:layout="@layout/activity_choose_login_type" />
+    <dialog
+        android:id="@+id/addvitalfragment"
+        android:name="com.criteriontech.digidoctormax.fragment.Addvitalfragment"
+        android:label="Add Vitas"
+        tools:layout="@layout/activity_addvitalfragment" />
+    <fragment
+        android:id="@+id/drCreateProfile3"
+        android:name="com.criteriontech.digidoctormax.fragment.DrCreateProfile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_dr_create_profile">
+        <action
+            android:id="@+id/action_drCreateProfile3_to_selectSlotFragment2"
+            app:destination="@id/selectSlotFragment2"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_drCreateProfile3_to_drHome"
+            app:destination="@id/drHome"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectSlotFragment2"
+        android:name="com.criteriontech.digidoctormax.fragment.SelectSlotFragment"
+        android:label="Select Slot"
+        tools:layout="@layout/fragment_select_slot">
+        <action
+            android:id="@+id/action_selectSlotFragment2_to_drHome"
+            app:destination="@id/drHome"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popUpTo="@id/drHome" />
+    </fragment>
+    <activity
+        android:id="@+id/startActivity"
+        android:name="com.criteriontech.digidoctormax.activity.StartActivity"
+        android:label="StartActivity"
+        tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/investigationsFragment"
+        android:name="com.criteriontech.digidoctormax.InvestigationsFragment"
+        android:label="Investigation"
+        tools:layout="@layout/fragment_investigations">
+        <action
+            android:id="@+id/action_investigationsFragment_to_investigationDetailFragment"
+            app:destination="@id/investigationDetailFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_investigationsFragment_to_showImageFileFragment"
+            app:destination="@id/showImageFileFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/prescriptionsFragment"
+        android:name="com.criteriontech.digidoctormax.PrescriptionsFragment"
+        android:label="Prescription"
+        tools:layout="@layout/fragment_prescriptions">
+        <action
+            android:id="@+id/action_prescriptionsFragment_to_visitFragment"
+            app:destination="@id/visitFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/vitalsFragment"
+        android:name="com.criteriontech.digidoctormax.VitalsFragment"
+        android:label="Vitals"
+        tools:layout="@layout/fragment_vitals">
+        <action
+            android:id="@+id/action_vitalsFragment_to_vitalChartFragment"
+            app:destination="@id/vitalChartFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/investigationDetailFragment"
+        android:name="com.criteriontech.digidoctormax.InvestigationDetailFragment"
+        android:label="fragment_investigation_detail"
+        tools:layout="@layout/fragment_investigation_detail" />
+    <fragment
+        android:id="@+id/showImageFileFragment"
+        android:name="com.criteriontech.digidoctormax.ShowImageFileFragment"
+        android:label="Files"
+        tools:layout="@layout/fragment_show_image_file" />
+    <fragment
+        android:id="@+id/showFileOrPdfFragment"
+        android:name="com.criteriontech.digidoctormax.ShowFileOrPdfFragment"
+        android:label="File"
+        tools:layout="@layout/fragment_show_file_or_pdf" />
+    <fragment
+        android:id="@+id/visitFragment"
+        android:name="com.criteriontech.digidoctormax.VisitFragment"
+        android:label="Prescription Detail"
+        tools:layout="@layout/fragment_visit">
+        <action
+            android:id="@+id/action_visitFragment_to_showFileOrPdfFragment"
+            app:destination="@id/showFileOrPdfFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/vitalChartFragment"
+        android:name="com.criteriontech.digidoctormax.VitalChartFragment"
+        android:label="Vital Chart"
+        tools:layout="@layout/fragment_vital_chart" />
+    <fragment
+        android:id="@+id/changePassword"
+        android:name="com.criteriontech.digidoctormax.fragment.ChangePassword"
+        android:label="Update Pasword"
+        tools:layout="@layout/fragment_change_password" />
+    <activity
+        android:id="@+id/splashScreen"
+        android:name="com.criteriontech.digidoctormax.activity.SplashScreen"
+        android:label="SplashScreen" />
+    <fragment
+        android:id="@+id/rescheduleFragment"
+        android:name="com.criteriontech.digidoctormax.fragment.RescheduleFragment"
+        android:label="Reschedule Appointment"
+        tools:layout="@layout/fragment_reschedule" />
+    <fragment
+        android:id="@+id/add_Bank_Details_Fragment"
+        android:name="com.criteriontech.digidoctormax.fragment.review.Add_Bank_Details_Fragment"
+        android:label="Add Bank Details"
+        tools:layout="@layout/add__bank__details_fragment" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.criteriontech.digidoctormax.fragment.ChatFragment"
+        android:label="Chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/bankDetailsListFragment"
+        android:name="com.criteriontech.digidoctormax.fragment.BankDetailsListFragment"
+        android:label="Bank Details List"
+        tools:layout="@layout/bank_details_list_fragment">
+        <action
+            android:id="@+id/action_bankDetailsListFragment_to_add_Bank_Details_Fragment"
+            app:destination="@id/add_Bank_Details_Fragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/quarantinePatientListFragment"
+        android:name="com.criteriontech.digidoctormax.QuarantinePatientListFragment"
+        android:label="Quarantine Patients List"
+        tools:layout="@layout/fragment_quarantine_patient_list" >
+        <action
+            android:id="@+id/action_quarantinePatientListFragment_to_writePrescriptionForQuarantineFragment"
+            app:destination="@id/writePrescriptionForQuarantineFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_quarantinePatientListFragment_to_patientDetailsActivity"
+            app:destination="@id/patientDetailsActivity"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/writePrescriptionForQuarantineFragment"
+        android:name="com.criteriontech.digidoctormax.WritePrescriptionForQuarantineFragment"
+        android:label="Write Prescription"
+        tools:layout="@layout/fragment_write_prescription_for_quarantine" />
+</navigation>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="chats"
+            type="com.criteriontech.digidoctormax.model.ChatModel" />
+
+        <variable
+            name="chatInterface"
+            type="com.criteriontech.digidoctormax.interfaces.ChatInterface" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:paddingTop="@dimen/dimen_5dp"
+        android:paddingBottom="5dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/profile"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="0.5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView149"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView149" />
+
+
+        <TextView
+            android:id="@+id/textView149"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:background="@drawable/sender_background_text_view"
+            android:fontFamily="@font/poppins_semibold"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="10dp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="10dp"
+            android:text="@{chats.message}"
+            android:textColor="#2D2D2D"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTimeStampRec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#802D2D2D"
+            android:textSize="8dp"
+            app:layout_constraintStart_toStartOf="@+id/textView149"
+            app:layout_constraintTop_toBottomOf="@+id/textView149" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

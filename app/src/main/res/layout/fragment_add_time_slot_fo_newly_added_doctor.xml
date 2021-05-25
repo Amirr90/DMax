@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="timeDetail"
+            type="com.criteriontech.digidoctormax.model.TimeDetail" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddTimeSlotFoNewlyAddedDoctorFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/Slot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:animateLayoutChanges="true"
+                android:paddingBottom="@dimen/_35sdp">
+
+
+                <ImageView
+                    android:id="@+id/slotimage"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_154sdp"
+                    android:layout_marginStart="61dp"
+                    android:layout_marginTop="108dp"
+                    android:layout_marginEnd="61dp"
+                    android:layout_marginBottom="17dp"
+                    android:src="@drawable/timeslot"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/textView33"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="114dp"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginEnd="114dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:text="@string/create_slot"
+                    android:textAlignment="center"
+                    android:textColor="#23384D"
+                    android:textSize="23dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/slotquote"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/slotimage" />
+
+
+                <TextView
+                    android:id="@+id/slotquote"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="58dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="60dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Pick a time slot and we'll get you scheduled!"
+                    android:textAlignment="center"
+                    android:textColor="#23384D"
+                    android:textSize="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+
+                <!--<androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView2"
+                    android:layout_width="0dp"
+                    android:layout_height="115dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="18dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintBottom_toTopOf="@+id/clTop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/slotquote"
+                    app:reverseLayout="true"
+                    app:spanCount="4"
+                    tools:itemCount="8"
+                    tools:listitem="@layout/inner_slot_week" />-->
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clTop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginBottom="46dp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    android:backgroundTint="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clDays"
+                    app:layout_constraintVertical_bias="0.0">
+
+
+                    <TextView
+                        android:id="@+id/createslot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="50dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Choose Your Time"
+                        android:textColor="#23384D"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/ClMobile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+
+                        android:id="@+id/ClMobile"
+                        android:layout_width="150dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        app:layout_constraintEnd_toStartOf="@+id/to"
+                        app:layout_constraintHorizontal_bias="0.67"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/createslot">
+
+
+                        <ImageView
+                            android:id="@+id/ivPhone"
+                            android:layout_width="@dimen/_11sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="4dp"
+                            android:src="@drawable/clock"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvFromTime"
+                            app:layout_constraintEnd_toStartOf="@+id/tvFromTime"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvFromTime" />
+
+                        <TextView
+                            android:id="@+id/tvFromTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/_2sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Time from"
+                            android:textSize="12sp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/to"
+                        android:layout_width="150dp"
+                        android:layout_height="36dp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        app:layout_constraintBottom_toBottomOf="@+id/ClMobile"
+                        app:layout_constraintEnd_toStartOf="@+id/imgAdd"
+                        app:layout_constraintStart_toEndOf="@+id/ClMobile"
+                        app:layout_constraintTop_toTopOf="@+id/ClMobile"
+                        app:layout_constraintVertical_bias="1.0">
+
+
+                        <ImageView
+                            android:id="@+id/totime"
+                            android:layout_width="@dimen/_11sdp"
+                            android:layout_height="@dimen/_12sdp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="2dp"
+                            android:src="@drawable/clock"
+                            app:layout_constraintBottom_toBottomOf="@+id/tvToTime"
+                            app:layout_constraintEnd_toStartOf="@+id/tvToTime"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/tvToTime" />
+
+                        <TextView
+                            android:id="@+id/tvToTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="@dimen/_2sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Time to"
+                            android:textSize="12sp"
+                            android:textStyle="italic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <Button
+                        android:id="@+id/btnDone"
+                        android:layout_width="0dp"
+                        android:layout_height="43dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_marginBottom="13dp"
+                        android:background="@drawable/slot_week_selected"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Done"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rvTimeSlot" />
+
+                    <ImageView
+                        android:id="@+id/imgAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:src="@drawable/ic_add"
+                        app:layout_constraintBottom_toBottomOf="@+id/to"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/to" />
+
+                    <TextView
+                        android:id="@+id/slotTo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_30sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/time_to"
+                        android:textColor="#23384D"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/slotFrom"
+                        app:layout_constraintStart_toEndOf="@+id/slotFrom"
+                        app:layout_constraintTop_toTopOf="@+id/slotFrom" />
+
+                    <TextView
+                        android:id="@+id/slotDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/days"
+                        android:textColor="#23384D"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/slotFrom"
+                        app:layout_constraintHorizontal_bias="0.49"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ClMobile" />
+
+                    <TextView
+                        android:id="@+id/slotFrom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/time_from"
+                        android:textColor="#23384D"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/slotDay"
+                        app:layout_constraintEnd_toStartOf="@+id/slotTo"
+                        app:layout_constraintStart_toEndOf="@+id/slotDay"
+                        app:layout_constraintTop_toTopOf="@+id/slotDay" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTimeSlot"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="6dp"
+                        app:layout_constraintBottom_toTopOf="@+id/btnDone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/slotDay"
+                        tools:listitem="@layout/inner_slot_time" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:text="@string/avg_patient_consultation_time"
+                    android:textColor="#23384D"
+                    android:textSize="@dimen/_11ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/slotquote" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ClDuration"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    app:layout_constraintBottom_toBottomOf="@+id/duration"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/duration"
+                    app:layout_constraintTop_toTopOf="@+id/duration">
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="@dimen/_11sdp"
+                        android:layout_height="@dimen/_12sdp"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:src="@drawable/ic_doctor"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/etDuration"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:background="@null"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center_vertical"
+                        android:hint="@string/duration_in_minutes"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:text="10"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/text_color"
+                        android:textSize="@dimen/_11sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/imageView3"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDays"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="90dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/slotquote">
+
+                    <TextView
+                        android:id="@+id/tvMon"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:background="@drawable/slot_week"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="Mon"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/tvTue"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvTue"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:background="@drawable/slot_week"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="Tue"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/tvWed"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvMon"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvWed"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:background="@drawable/slot_week"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="Wed"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/tvThu"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvTue"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvThu"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:background="@drawable/slot_week"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="Thu"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvWed"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvFri"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/slot_week"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="Fri"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/tvTue"
+                        app:layout_constraintStart_toStartOf="@+id/tvMon"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMon" />
+
+                    <TextView
+                        android:id="@+id/tvSat"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/slot_week"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="Sat"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/tvWed"
+                        app:layout_constraintStart_toStartOf="@+id/tvTue"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTue" />
+
+                    <TextView
+                        android:id="@+id/tvSun"
+                        android:layout_width="@dimen/_60sdp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/slot_week"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="Sun"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="@+id/tvThu"
+                        app:layout_constraintStart_toStartOf="@+id/tvWed"
+                        app:layout_constraintTop_toBottomOf="@+id/tvWed" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

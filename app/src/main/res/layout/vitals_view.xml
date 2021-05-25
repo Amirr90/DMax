@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vitals"
+            type="com.criteriontech.digidoctormax.model.IsolationVitalModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@{vitals.key,default=`Name`}"
+            android:textColor="#262E3F"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@{vitals.value,default=`101`}"
+            android:textColor="#3F4E6E"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            app:autoSizeTextType="uniform" />
+    </LinearLayout>
+</layout>

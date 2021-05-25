@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="patient"
+            type="com.criteriontech.digidoctormax.model.MedicationDetailValue" />
+
+        <variable
+            name="prescription"
+            type="com.criteriontech.digidoctormax.request.SavePrescription" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".fragment.WritePrescriptionFragment">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_50sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.06999999">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@drawable/rectangle_box_rounded_corner"
+                    android:backgroundTint="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/clPersonalDtl">
+
+                    <TextView
+                        android:id="@+id/tex"
+                        style="@style/TextLabelDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/diagnosis"
+                        android:textColor="@color/text_color"
+                        android:textSize="12pt"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView24"
+                        app:layout_constraintStart_toEndOf="@+id/imageView24"
+                        app:layout_constraintTop_toTopOf="@+id/imageView24" />
+
+                    <TextView
+                        android:id="@+id/textView40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/diagnosis_provisional_diagnosis"
+                        android:textColor="#3F4E6E"
+                        android:textSize="7pt"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tex" />
+
+                    <EditText
+                        android:id="@+id/edtDiagnosis"
+                        android:layout_width="0dp"
+                        android:layout_height="127dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="13dp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        android:ems="10"
+                        android:gravity="top"
+                        android:hint="@string/diagnostic_details"
+                        android:inputType="textMultiLine"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingTop="10dp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:text="@={prescription.diagnosis}"
+                        android:textAlignment="viewStart"
+                        android:textStyle="italic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView40"
+                        tools:ignore="RtlCompat" />
+
+                    <ImageView
+                        android:id="@+id/imageView24"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="25dp"
+                        android:src="@drawable/eellipse"
+                        app:layout_constraintBottom_toTopOf="@+id/textView40"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView43"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/shape"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView24"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView24"
+                        app:layout_constraintStart_toStartOf="@+id/imageView24"
+                        app:layout_constraintTop_toTopOf="@+id/imageView24" />
+
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="7dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/suggest_investigations_medical_checkups"
+                        android:textColor="#3F4E6E"
+                        android:textSize="7pt"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView44"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/imageView44"
+                        app:layout_constraintTop_toTopOf="@+id/imageView44" />
+
+                    <ImageView
+                        android:id="@+id/imageView44"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="25dp"
+                        android:src="@drawable/investi"
+                        app:layout_constraintEnd_toStartOf="@+id/textView42"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edtDiagnosis" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/edtInvestigations"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="13dp"
+                        android:background="@drawable/rounded_colorfill_button"
+                        android:drawableStart="@drawable/se"
+                        android:drawablePadding="9dp"
+                        android:hint="@string/search_investigation"
+                        android:inputType="textPersonName"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_12ssp"
+                        android:textStyle="italic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView42" />
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chpInvestigation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edtInvestigations" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clPersonalDtl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@drawable/rectangle_box_rounded_corner"
+                    android:backgroundTint="@color/white"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ivProfileimage"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_man" />
+
+                    <TextView
+                        android:id="@+id/tvdoctor"
+                        style="@style/TextLabelDefault"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@{patient.userDetails.get(0).name}"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/textView19"
+                        app:layout_constraintStart_toEndOf="@+id/ivProfileimage"
+                        app:layout_constraintTop_toTopOf="@+id/ivProfileimage" />
+
+                    <TextView
+                        android:id="@+id/tvPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@{patient.userDetails.get(0).genAge}"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/textView19"
+                        app:layout_constraintStart_toStartOf="@+id/tvdoctor"
+                        app:layout_constraintTop_toBottomOf="@+id/tvdoctor" />
+
+                    <TextView
+                        android:id="@+id/tvDetail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_location"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@{patient.userDetails.get(0).address}"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvPhone"
+                        app:layout_constraintStart_toStartOf="@+id/tvPhone"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPhone" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@{patient.userDetails.get(0).paymentAmount}"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/tvdoctor" />
+
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Paid"
+                        android:textColor="@color/grey"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/textView19"
+                        app:layout_constraintStart_toStartOf="@+id/textView19"
+                        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+                    <TextView
+                        android:id="@+id/textView28"
+                        style="@style/TextLabelDefault"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:background="@drawable/rounded_colorfill_button"
+                        android:backgroundTint="@color/yellow"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/past_medical_history"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/textView27"
+                        app:layout_constraintTop_toBottomOf="@+id/tvDetail" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/grey_light"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+                    <ImageView
+                        android:id="@+id/imageView15"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="@+id/ivProfileimage"
+                        app:layout_constraintTop_toBottomOf="@+id/view"
+                        app:srcCompat="@drawable/ic_medicine_kit_with_first_aid_symbol" />
+
+                    <TextView
+                        android:id="@+id/textView32"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Monthly Medical Checkup"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/_10sdp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toEndOf="@+id/imageView15"
+                        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                    <ImageView
+                        android:id="@+id/imageView16"
+                        android:layout_width="@dimen/_17sdp"
+                        android:layout_height="@dimen/_17sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="@+id/imageView15"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+                        app:srcCompat="@drawable/ic_calender_grey_color" />
+
+                    <TextView
+                        android:id="@+id/tvDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Thu, 07:00 PM - 09 Nov 2020"
+                        android:textColor="@color/grey_subtext"
+                        android:textSize="@dimen/_10sdp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="@+id/textView32"
+                        app:layout_constraintTop_toTopOf="@+id/imageView16" />
+
+                    <View
+                        android:id="@+id/v2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/grey_light"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+
+                    <TextView
+                        android:id="@+id/textView35"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-1dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/symptoms_uploaded_by_patient"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/_12sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/rvProblem"
+                        app:layout_constraintStart_toStartOf="@+id/v2"
+                        app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvProblem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="14dp"
+                        android:orientation="horizontal"
+                        android:scrollbars="none"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/textView35"
+                        app:layout_constraintTop_toBottomOf="@+id/textView35"
+                        tools:listitem="@layout/innerview_problem" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvAttachment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:orientation="horizontal"
+                        android:scrollbars="none"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rvProblem"
+                        tools:listitem="@layout/sym_image" />
+
+                    <ImageView
+                        android:id="@+id/btnVideoCall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView28"
+                        app:layout_constraintEnd_toStartOf="@+id/textView28"
+                        app:layout_constraintTop_toTopOf="@+id/textView28"
+                        app:srcCompat="@drawable/ic_video_call" />
+
+                    <ImageView
+                        android:id="@+id/btnVoice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView28"
+                        app:layout_constraintEnd_toStartOf="@+id/btnVideoCall"
+                        app:layout_constraintTop_toTopOf="@+id/textView28"
+                        app:srcCompat="@drawable/ic_voice" />
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="152dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Moniter patient tag?"
+                        android:textColor="@color/text_color"
+                        app:layout_constraintBottom_toTopOf="@+id/textView35"
+                        app:layout_constraintEnd_toStartOf="@+id/MonitorSwitch"
+                        app:layout_constraintStart_toStartOf="@+id/v2"
+                        app:layout_constraintTop_toBottomOf="@+id/v2" />
+
+                    <Switch
+                        android:id="@+id/MonitorSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView48"
+                        app:layout_constraintEnd_toEndOf="@+id/textView28"
+                        app:layout_constraintStart_toEndOf="@+id/textView48"
+                        app:layout_constraintTop_toTopOf="@+id/textView48" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl">
+
+                    <TextView
+                        android:id="@+id/tex2"
+                        style="@style/TextLabelDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="25dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/medicine"
+                        android:textColor="@color/text_color"
+                        android:textSize="12pt"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView46"
+                        app:layout_constraintStart_toEndOf="@+id/imageView46"
+                        app:layout_constraintTop_toTopOf="@+id/imageView46" />
+
+                    <ImageView
+                        android:id="@+id/imageView46"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="25dp"
+                        android:src="@drawable/eellipse"
+                        app:layout_constraintEnd_toStartOf="@+id/tex2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView47"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@drawable/ic_drugs"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView46"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView46"
+                        app:layout_constraintStart_toStartOf="@+id/imageView46"
+                        app:layout_constraintTop_toTopOf="@+id/imageView46" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/edtMedName"
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="14dp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        android:drawableLeft="@drawable/shape25"
+                        android:drawablePadding="10dp"
+                        android:ems="10"
+                        android:hint="Medicine Name"
+                        android:inputType="textPersonName"
+                        android:paddingLeft="10dp"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tex2" />
+
+                    <EditText
+                        android:id="@+id/edtRemark"
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="13dp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        android:drawablePadding="10dp"
+                        android:ems="10"
+                        android:hint="Remark"
+                        android:inputType="textPersonName"
+                        android:paddingLeft="10dp"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtFrequency" />
+
+                    <EditText
+                        android:id="@+id/txtDuration"
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginEnd="13dp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        android:drawablePadding="10dp"
+                        android:ems="10"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:hint="@string/duration"
+                        android:inputType="phone"
+                        android:maxLength="2"
+                        android:paddingStart="13dp"
+                        android:singleLine="true"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtFrequency"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/txtFrequency"
+                        app:layout_constraintTop_toTopOf="@+id/txtFrequency" />
+
+                    <Spinner
+                        android:id="@+id/txtFrequency"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="14dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginEnd="3dp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        android:paddingLeft="10dp"
+                        android:singleLine="true"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/txtDuration"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edtMedName" />
+
+                    <TextView
+                        android:id="@+id/btnAdd"
+                        style="@style/TextLabelDefault"
+                        android:layout_width="169dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="164dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="13dp"
+                        android:background="@drawable/add_more"
+                        android:backgroundTint="@color/yellow"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="center"
+                        android:text="+ Add More"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edtRemark" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvMed"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="21dp"
+                        android:maxHeight="@dimen/_150sdp"
+                        android:orientation="vertical"
+                        android:scrollbars="none"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btnAdd"
+                        tools:listitem="@layout/inner_prescription" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="0dp"
+                    android:layout_height="67dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="14dp"
+                    android:background="@drawable/add_more"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+                    <TextView
+                        android:id="@+id/textView47"
+                        android:layout_width="173dp"
+                        android:layout_height="66dp"
+                        android:layout_marginStart="15dp"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:text="@string/add_patient_vitals_details"
+                        android:textColor="#FBFBFB"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/btnAddVital"
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="13dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/add"
+                        android:gravity="center"
+                        android:text="@string/add"
+                        android:textColor="@color/add"
+                        android:textSize="@dimen/_15sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clOtherAdvice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+                    <TextView
+                        android:id="@+id/tex3"
+                        style="@style/TextLabelDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="@string/given_advice"
+                        android:textColor="@color/text_color"
+                        android:textSize="12pt"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView48"
+                        app:layout_constraintStart_toEndOf="@+id/imageView48"
+                        app:layout_constraintTop_toTopOf="@+id/imageView48" />
+
+                    <ImageView
+                        android:id="@+id/imageView48"
+                        android:layout_width="33dp"
+                        android:layout_height="34dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="16dp"
+                        android:src="@drawable/eellipse"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imageView49"
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@drawable/ic_drugs"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView48"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView48"
+                        app:layout_constraintStart_toStartOf="@+id/imageView48"
+                        app:layout_constraintTop_toTopOf="@+id/imageView48" />
+
+                    <TextView
+                        android:id="@+id/textView31"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/advice"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tex3" />
+
+                    <EditText
+                        android:id="@+id/edtAdvice"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="top"
+                        android:hint="@string/advice"
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@={prescription.otherAdvise}"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+                    <TextView
+                        android:id="@+id/textView33"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/avoid_diet"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edtAdvice" />
+
+                    <EditText
+                        android:id="@+id/edtAvoidDiet"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="top"
+                        android:hint="@string/avoid_diet"
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@={prescription.foodToBeAvoided}"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+                    <TextView
+                        android:id="@+id/textView34"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/other_diet"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edtAvoidDiet" />
+
+                    <EditText
+                        android:id="@+id/edtOtherDiet"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        android:gravity="top"
+                        android:hint="@string/other_diet"
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@={prescription.otherDiet}"
+                        android:textSize="8pt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+                    <TextView
+                        android:id="@+id/textView36"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/recommended_diet"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edtOtherDiet" />
+
+                    <EditText
+                        android:id="@+id/edtRecommendedDiet"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                        android:fontFamily="@font/poppins_regular"
+                        android:gravity="top"
+                        android:hint="@string/recommended_diet"
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/_5sdp"
+                        android:text="@={prescription.recommendedDiet}"
+                        android:textColor="@color/black"
+                        android:textSize="8pt"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView36" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="0dp"
+                    android:layout_height="43dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/rectangle_box_rounded_corner_with_outline"
+                    android:backgroundTint="#EDA537"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:text="Submit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/clOtherAdvice" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -136,6 +136,9 @@
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_writePrescriptionFragment_to_pipVideoCallFragment"
+            app:destination="@id/pipVideoCallFragment" />
     </fragment>
     <fragment
         android:id="@+id/chooseLoginType2"
@@ -319,4 +322,9 @@
         android:name="com.criteriontech.digidoctormax.WritePrescriptionForQuarantineFragment"
         android:label="Write Prescription"
         tools:layout="@layout/fragment_write_prescription_for_quarantine" />
+    <dialog
+        android:id="@+id/pipVideoCallFragment"
+        android:name="com.criteriontech.digidoctormax.PipVideoCallFragment"
+        android:label="fragment_pip_video_call"
+        tools:layout="@layout/fragment_pip_video_call" />
 </navigation>

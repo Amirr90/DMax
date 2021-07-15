@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import com.criteriontech.digidoctormax.R;
 import com.criteriontech.digidoctormax.adapters.MedicineDetailsAdapter;
 import com.criteriontech.digidoctormax.adapters.VitalDetailsAdapter;
 import com.criteriontech.digidoctormax.databinding.ActivityPatientDetailsBinding;
@@ -33,7 +32,6 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.List;
 
-import rebus.bottomdialog.BottomDialog;
 
 public class PatientDetailsActivity extends Fragment {
     private static final String TAG = "PatientDetailsActivity";
@@ -149,9 +147,9 @@ public class PatientDetailsActivity extends Fragment {
             }
         });
         //show Past MedicalHistory Page
-        binding.textView28.setOnClickListener(view12 -> ShowBottomDialog());
+        // binding.textView28.setOnClickListener(view12 -> ShowBottomDialog());
     }
-
+/*
     private void ShowBottomDialog() {
         BottomDialog dialog = new BottomDialog(requireActivity());
         dialog.title("Past Medical History");
@@ -178,6 +176,6 @@ public class PatientDetailsActivity extends Fragment {
             }
         });
         dialog.show();
-    }
+    }*/
 }
 

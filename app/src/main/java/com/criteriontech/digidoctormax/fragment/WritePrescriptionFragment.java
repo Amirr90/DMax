@@ -24,14 +24,14 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.criteriontech.digidoctormax.R;
-import com.criteriontech.digidoctormax.activity.VideoActivity;
 import com.criteriontech.digidoctormax.adapters.DrugInteractionAdapter;
-import com.criteriontech.digidoctormax.databinding.DrugInteractionLayoutBinding;
 import com.criteriontech.digidoctormax.databinding.FragmentWritePrescriptionBinding;
 import com.criteriontech.digidoctormax.databinding.InnerPrescriptionBinding;
 import com.criteriontech.digidoctormax.databinding.InnerviewProblemBinding;
 import com.criteriontech.digidoctormax.databinding.SymImageBinding;
 import com.criteriontech.digidoctormax.interfaces.NewApiInterface;
+import com.criteriontech.digidoctormax.jitsiVideoCall.InitVideoCallActivity;
+import com.criteriontech.digidoctormax.jitsiVideoCall.VideoCallActivity;
 import com.criteriontech.digidoctormax.model.DrugInteractionModel;
 import com.criteriontech.digidoctormax.model.DrugIntrcationModel;
 import com.criteriontech.digidoctormax.model.FrequencyList;
@@ -66,7 +66,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import rebus.bottomdialog.BottomDialog;
 
 public class WritePrescriptionFragment extends Fragment {
     FragmentWritePrescriptionBinding binding;
@@ -91,7 +90,7 @@ public class WritePrescriptionFragment extends Fragment {
     ArrayAdapter<MedicineDetail> medicineDetailAdp;
     ArrayAdapter<FrequencyList> frequencyAdp;
     MedicationDetailResp medicationDetailResp;
-    BottomDialog dialog;
+    //BottomDialog dialog;
     int monitor;
     String ids;
     AlertDialog.Builder alertDialog;
@@ -172,7 +171,28 @@ public class WritePrescriptionFragment extends Fragment {
             }
         });
         binding.btnVoice.setOnClickListener(view1 -> hitVoiceCall());
-        binding.btnVideoCall.setOnClickListener(view1 -> hitVideoCall());
+        binding.btnVideoCall.setOnClickListener(view1 -> {
+            //hitVideoCall();
+
+            //startActivity(new Intent(requireActivity(), InitVideoCallActivity.class));
+
+            LoginValue loginValue = SharedPrefManager.getInstance(requireActivity()).getUser();
+            startActivity(new Intent(requireActivity(), InitVideoCallActivity.class)
+                    .putExtra("docId", String.valueOf(loginValue.getId()))
+                    .putExtra(AppUtils.DOCTOR_NAME, String.valueOf(loginValue.getName()))
+                    .putExtra(AppUtils.PATIENT_NAME, "" + binding.tvdoctor.getText().toString())
+                    .putExtra("memberId", "" + medicationDetailResp.getResponseValue().get(0).getUserDetails().get(0).getMemberId()));
+
+
+
+           /* LoginValue loginValue = SharedPrefManager.getInstance(requireActivity()).getUser();
+            startActivity(new Intent(requireActivity(), VideoCallActivity.class)
+                    .putExtra("docId",String.valueOf(loginValue.getId()))
+                    .putExtra("memberId", "" + medicationDetailResp.getResponseValue().get(0).getUserDetails().get(0).getMemberId()));
+
+
+            */
+        });
         binding.btnSubmit.setOnClickListener(view1 -> {
 
             if (TextUtils.isEmpty(binding.edtMedName.getText().toString())) {
@@ -262,6 +282,7 @@ public class WritePrescriptionFragment extends Fragment {
             binding.chpInvestigation.removeView(view1.getRootView());
             binding.chpInvestigation.invalidate();
         });
+
         binding.edtMedName.setOnItemClickListener((adapterView, view1, i, l) -> {
 
 
@@ -396,7 +417,7 @@ public class WritePrescriptionFragment extends Fragment {
             Toast.makeText(requireActivity(), "No internet connection!", Toast.LENGTH_SHORT).show();
 
         //show Past MedicalHistory Page
-        binding.textView28.setOnClickListener(view12 -> ShowBottomDialog());
+        //  binding.textView28.setOnClickListener(view12 -> ShowBottomDialog());
     }
 
     private void showDrugInteractionDialog(Object obj, List<String> medicineIds) {
@@ -464,7 +485,7 @@ public class WritePrescriptionFragment extends Fragment {
         return String.valueOf(dtTableArray);
     }
 
-    private void ShowBottomDialog() {
+/*    private void ShowBottomDialog() {
         dialog = new BottomDialog(requireActivity());
         dialog.title("Past Medical History");
         dialog.canceledOnTouchOutside(true);
@@ -489,7 +510,7 @@ public class WritePrescriptionFragment extends Fragment {
             }
         });
         dialog.show();
-    }
+    }*/
 
     private void hitVoiceCall() {
         VoiceCall voiceCall = new VoiceCall();
@@ -514,7 +535,6 @@ public class WritePrescriptionFragment extends Fragment {
 
     private void hitVideoCall() {
         String roomName = String.valueOf(System.currentTimeMillis());
-
         LoginValue loginValue = SharedPrefManager.getInstance(requireActivity()).getUser();
         VideoCall videoCall = new VideoCall();
         videoCall.setCallType("1");
@@ -529,10 +549,23 @@ public class WritePrescriptionFragment extends Fragment {
                 @Override
                 public void onSuccess(Object obj) {
                     try {
+
                         VideoCallRes responseModel = (VideoCallRes) obj;
-                        startActivity(new Intent(requireActivity(), VideoActivity.class).putExtra("roomName", roomName)
+                 /*       startActivity(new Intent(requireActivity(), VideoActivity.class).putExtra("roomName", roomName)
+                                .putExtra("accessToken", responseModel.getDoctorTwilioAccessToken())
+                                .putExtra("memberId", videoCall.getMemberId()));*/
+                        
+                       /* Bundle bundle = new Bundle();
+                        bundle.putString("accessToken", responseModel.getDoctorTwilioAccessToken());
+                        bundle.putString("memberId", videoCall.getMemberId());
+                        bundle.putString("roomName", roomName);
+                        navController.navigate(R.id.action_writePrescriptionFragment_to_pipVideoCallFragment, bundle);*/
+
+                        startActivity(new Intent(requireActivity(), VideoCallActivity.class)
+                                .putExtra("roomName", roomName)
                                 .putExtra("accessToken", responseModel.getDoctorTwilioAccessToken())
                                 .putExtra("memberId", videoCall.getMemberId()));
+
 
                     } catch (Exception e) {
                         e.printStackTrace();

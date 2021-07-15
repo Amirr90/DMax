@@ -3,7 +3,6 @@ package com.criteriontech.digidoctormax.utils;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -16,7 +15,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -28,7 +26,6 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -37,8 +34,6 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.Transformation;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.MimeTypeMap;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,7 +43,7 @@ import androidx.core.content.FileProvider;
 import com.criteriontech.digidoctormax.BuildConfig;
 import com.criteriontech.digidoctormax.R;
 import com.criteriontech.digidoctormax.databinding.ImagePreviewBinding;
-import com.criteriontech.digidoctormax.interfaces.NewApiInterface;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -71,6 +66,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -79,6 +75,10 @@ import java.util.regex.Pattern;
 public class AppUtils {
 
 
+    public static final String CALL_DISCONNECTED = "Disconnected";
+    public static final String CALL_ACCEPT = "Connected";
+    public static final String CALL_STARTED = "Started";
+    public static final String VIDEO_CALLS = "videoCalls";
     public static final String IS_FIRST_TIME = "isFirstTime";
     public static final String fcmToken = "fcmToken";
     public static final String IS_LOGIN = "isLogin";
@@ -97,7 +97,19 @@ public class AppUtils {
     public static final String KEY_IS_ERA_USER = "isEraUser";
     public static final String KEY_APPOINTMENT_ID = "appointmentId";
     public static final String KEY_PRESCRIPTION_ID = "prescriptionId";
-
+    public static final String CALL_STATUS = "callStatus";
+    public static final String CALL_REJECTED_BY = "rejectedBy";
+    public static final String PATIENT = "patient";
+    public static final String CALL_MISSED = "Missed";
+    public static final String RINGING = "Ringing";
+    public static final String VIDEO_CALLS_DEMO = "videoCallDemo";
+    public static final String CALL_INITIATED_TIMESTAMP = "callInitiatedTimestamp";
+    public static final String ROOM_CODE = "roomCode";
+    public static final String CALL_REJECTED = "Rejected";
+    public static final String UID = "uid";
+    public static final String DOCTOR_ID = "docId";
+    public static final String DOCTOR_NAME = "doctorName";
+    public static final String PATIENT_NAME = "patientName";
 
     private static final String TAG = "AppUtils";
     public static Toast mToast;
@@ -140,7 +152,16 @@ public class AppUtils {
     }
 
 
+    public static void updateTodatabase(String callDisconnected, String roomCode) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("callStatus", callDisconnected);
+        map.put("disconnectedTimestamp", System.currentTimeMillis());
+        map.put("disconnectedBy", "doctor");
 
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection(AppUtils.VIDEO_CALLS).document(roomCode)
+                .update(map).addOnFailureListener(e -> Log.d(TAG, "onFailure: " + e.getLocalizedMessage()));
+    }
 
     public static List<String> getBankNameList() {
         List<String> strings = new ArrayList<>();
@@ -1923,4 +1944,16 @@ public class AppUtils {
         }).show();
     }
 
+    public static void createCallData(String callDisconnected, String roomCode, String uid, String docId) {
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("callStatus", callDisconnected);
+        map.put("uid", uid);
+        map.put("docId", docId);
+        map.put("callStartedTimestamp", System.currentTimeMillis());
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection(AppUtils.VIDEO_CALLS)
+                .document(roomCode)
+                .set(map).addOnFailureListener(e -> Log.d(TAG, "onFailure: " + e.getLocalizedMessage()));
+    }
 }

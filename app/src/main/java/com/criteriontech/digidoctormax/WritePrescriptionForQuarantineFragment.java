@@ -29,7 +29,6 @@ import com.criteriontech.digidoctormax.databinding.FragmentWritePrescriptionForQ
 import com.criteriontech.digidoctormax.databinding.InnerPrescriptionBinding;
 import com.criteriontech.digidoctormax.databinding.InnerviewProblemBinding;
 import com.criteriontech.digidoctormax.databinding.SymImageBinding;
-import com.criteriontech.digidoctormax.fragment.WritePrescriptionFragment;
 import com.criteriontech.digidoctormax.interfaces.NewApiInterface;
 import com.criteriontech.digidoctormax.model.DrugInteractionModel;
 import com.criteriontech.digidoctormax.model.DrugIntrcationModel;
@@ -67,8 +66,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import rebus.bottomdialog.BottomDialog;
-
 
 public class WritePrescriptionForQuarantineFragment extends Fragment {
 
@@ -97,7 +94,7 @@ public class WritePrescriptionForQuarantineFragment extends Fragment {
     ArrayAdapter<MedicineDetail> medicineDetailAdp;
     ArrayAdapter<FrequencyList> frequencyAdp;
     MedicationDetailResp medicationDetailResp;
-    BottomDialog dialog;
+
     int monitor;
     String ids;
     AlertDialog.Builder alertDialog;
@@ -412,7 +409,7 @@ public class WritePrescriptionForQuarantineFragment extends Fragment {
             Toast.makeText(requireActivity(), "No internet connection!", Toast.LENGTH_SHORT).show();
 
         //show Past MedicalHistory Page
-        binding.textView28.setOnClickListener(view12 -> ShowBottomDialog());
+        // binding.textView28.setOnClickListener(view12 -> ShowBottomDialog());
     }
 
     private WritePrescriptionForQuarantineModel getQuarantineData(SavePrescription savePrescription) {
@@ -497,7 +494,7 @@ public class WritePrescriptionForQuarantineFragment extends Fragment {
         return String.valueOf(dtTableArray);
     }
 
-    private void ShowBottomDialog() {
+/*    private void ShowBottomDialog() {
         dialog = new BottomDialog(requireActivity());
         dialog.title("Past Medical History");
         dialog.canceledOnTouchOutside(true);
@@ -522,7 +519,7 @@ public class WritePrescriptionForQuarantineFragment extends Fragment {
             }
         });
         dialog.show();
-    }
+    }*/
 
     private void hitVoiceCall() {
         VoiceCall voiceCall = new VoiceCall();

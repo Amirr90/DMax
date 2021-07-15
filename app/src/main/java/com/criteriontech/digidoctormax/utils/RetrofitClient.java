@@ -51,7 +51,6 @@ public class RetrofitClient {
         return retrofit.create(Api.class);
     }
 
-
     public Api drugInteraction() {
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
 
@@ -81,6 +80,5 @@ public class RetrofitClient {
                 .build();
         return retrofit.create(Api.class);
     }
-
 
 }

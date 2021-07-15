@@ -146,7 +146,6 @@ wakeupIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR
         wakeLock.release();
 
 
-
     }
 
     private NotificationManager getManager(Context context) {

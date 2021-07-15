@@ -23,8 +23,8 @@
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
-
     <application
+        android:name=".utils.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -35,6 +35,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DigiDoctorMax.NoActionBar"
         tools:targetApi="n">
+        <activity android:name=".jitsiVideoCall.VideoCallJitsiActivity"></activity>
+        <activity android:name=".jitsiVideoCall.InitVideoCallActivity" />
+        <activity android:name=".jitsiVideoCall.VideoCallActivity" />
         <activity android:name=".activity.CallReceiveActivity" />
         <activity android:name=".activity.VideoActivity" />
         <activity
@@ -50,7 +53,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".fragment.home.ClinicHomeActivity"
             android:theme="@style/Theme.DigiDoctorMax" />
@@ -65,6 +67,7 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <receiver
             android:name=".utils.WakefulBroadcasterReceiver"
             android:enabled="true"

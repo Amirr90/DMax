@@ -288,11 +288,19 @@ public class WritePrescriptionFragment extends Fragment {
 
             List<String> medicineIds = addMedAdp.getMedicineList();
 
+            Log.d("TAG", "onViewCreated: " + medicineIds);
             StringBuilder builder = new StringBuilder();
             for (int a = 0; a < medicineIds.size(); a++) {
-                Log.d("TAG", "onViewCreated: " + medicineIds.get(a));
-                builder.append(medicineIds.get(a));
-                builder.append(",");
+
+                if (medicineIds.contains(medicineIds.get(a))) {
+                    Toast.makeText(requireActivity(), "Medicine Already Added", Toast.LENGTH_SHORT).show();
+                    binding.edtMedName.setText("");
+                    return;
+                } else {
+                    Log.d("TAG", "onViewCreated: " + medicineIds.get(a));
+                    builder.append(medicineIds.get(a));
+                    builder.append(",");
+                }
             }
 
 
@@ -330,7 +338,6 @@ public class WritePrescriptionFragment extends Fragment {
 
                 @Override
                 public void onFailed(String msg) {
-                    Toast.makeText(requireActivity(), "" + msg, Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -353,7 +360,13 @@ public class WritePrescriptionFragment extends Fragment {
             if (itemMedicine.getMedicineName() != null) {
                 itemMedicine.setDuration(binding.txtDuration.getText().toString().trim());
                 itemMedicine.setRemark(binding.edtRemark.getText().toString().trim());
-                addedMedDetails.add(itemMedicine);
+
+                if (addedMedDetails.contains(itemMedicine)) {
+                    Toast.makeText(requireActivity(), "Medicine Already Added", Toast.LENGTH_SHORT).show();
+                } else {
+                    addedMedDetails.add(itemMedicine);
+                }
+
                 binding.rvMed.post(this::run);
                 binding.edtMedName.setText("");
                 binding.txtDuration.setText("");

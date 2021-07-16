@@ -77,7 +77,7 @@ public class VideoCallJitsiActivity extends JitsiMeetActivity implements JitsiMe
     private void joinMeeting(String roomCode) {
         view = new JitsiMeetView(this);
         JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
-                .setRoom(JIT_SI_SERVER_URL + roomCode)
+                .setRoom(SERVER_URL + roomCode)
                 .setFeatureFlag("toolbox.enabled", false)
                 .setFeatureFlag("raise-hand.enabled", false)
                 .setFeatureFlag("recording.enabled", false)
